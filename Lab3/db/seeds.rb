@@ -7,9 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 10.times do |index|
-    Article.create!(title: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 0).chop,
-                  body: Faker::Lorem.paragraph,
-                  author: Faker::Name.name,
+    Product.create!(title: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 0).chop,
+                    body: Faker::Lorem.paragraph,
+                    author: Faker::Name.name,
                     status:'public'
                  )
   end

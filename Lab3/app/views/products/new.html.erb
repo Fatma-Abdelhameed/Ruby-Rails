@@ -1,14 +1,14 @@
 <center>
 <h1>New Product</h1>
 
-<%= form_with model: @article do |form| %>
+<%= form_with model: @product do |form| %>
   <div>
     <%#= form.label :title %>
     <label>Name</label>
     <br>
     <%= form.text_field :title %>
   </div>
-  <% @article.errors.full_messages_for(:title).each do |message| %>
+  <% @product.errors.full_messages_for(:title).each do |message| %>
     <div class="alert alert-danger"><%= message %></div>
   <% end %>
 
@@ -16,7 +16,7 @@
   <label>vendor</label><br>
   <%= form.text_field :author %>
 </div>
-  <% @article.errors.full_messages_for(:author).each do |message| %>
+  <% @product.errors.full_messages_for(:author).each do |message| %>
     <div class="alert alert-danger"><%= message %></div>
   <% end %>
 
@@ -26,7 +26,7 @@
     <label>Description</label><br>
     <%= form.text_area :body %>
   </div>
-  <% @article.errors.full_messages_for(:body).each do |message| %>
+  <% @product.errors.full_messages_for(:body).each do |message| %>
     <div class="alert alert-danger"><%= message %></div>
   <% end %>
 

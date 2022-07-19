@@ -1,7 +1,7 @@
 
 <h1>Products</h1>
 
-<h3>Total Count : <%= Article.public_count %> </h3>
+<h3>Total Count : <%= Product.public_count %> </h3>
 
 <br><br>
 
@@ -16,7 +16,7 @@
     <%# end %>
   <%# end %>
 <!--</ul>-->
-<%= link_to "New Product", new_article_path, class:'btn btn-success mx-5' %>
+<%= link_to "New Product", new_product_path, class:'btn btn-success mx-5' %>
 <table class="table">
   <thead>
   <tr>
@@ -27,7 +27,7 @@
   </tr>
   </thead>
   <tbody>
-  <% @articles.each do |article| %>
+  <% @products.each do |article| %>
   <tr>
     <th scope="row"><%= article.id %></th>
     <td><%= article.title %></td>
@@ -39,7 +39,7 @@
                          method: :delete, form:{ data: {confirm: "Are you sure?"}},
           class:'btn btn-danger mx-4'%>
 
-        <%= link_to "Edit", edit_article_path(article), class:'btn btn-secondary' %>
+        <%= link_to "Edit", edit_product_path(article), class:'btn btn-secondary' %>
       </div>
     </td>
   </tr>
