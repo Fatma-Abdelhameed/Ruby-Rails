@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :roles
+  devise_for :admins
+    scope "/admin" do 
+      resources :admins
+    end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root "articles#index"
+
   # Defines the root path route ("/")
-  # root "articles#index"
-  # get "/articles", to: "articles#index"
-  # get "/articles/:id", to: "articles#show"
-  resources :products do
-  resources :comments
-  end
+  root "books#index"
+  resources :books 
 end

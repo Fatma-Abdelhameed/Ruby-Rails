@@ -1,3 +1,12 @@
 class ApplicationController < ActionController::Base
-  http_basic_authenticate_with name: "admin", password: "admin"
+    before_action :configure_permitted_parameters, if: :devise_controller?
+    protected
+    def configure_permitted_parameters
+        devise_parameter_sanitizer.permit(:sign_up,keys: [:name])
+        devise_parameter_sanitizer.permit(:account_update,keys: [:name])
+    end
+    rescue_from CanCan::AccessDenied do 
+        flash[:error] = 'Access denied'
+        redirect_to root_url
+    end
 end
